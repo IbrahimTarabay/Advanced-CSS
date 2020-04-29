@@ -29,6 +29,49 @@ body {
   /*two background image and linear-gradient*/
   background-size: cover;
   background-position: top;
+  position: relative;
 
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  /*with absolute psoitioning, an element can be
+  placed anywhere on a page*/
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+  /*width automaticaly figured out from the browser*/
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /*top and left in relation to the parent*/
+  transform: translate(-50%,-50%);
+  /*transform in relation to the element itself*/
+  /*to translate the origin point of x-y axis of the box*/
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;/*gives line breaks before and after it*/
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 17px;
 }
