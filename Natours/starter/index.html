@@ -14,17 +14,18 @@
     </head>
     <body>
        <header class="header"> 
-         <div class="logo-box">
-           <img src="img/logo-white.png" alt="Logo" class="logo">
+         <div class="header__logo-box"><!--block__element used when element is related to parent block-->
+           <img src="img/logo-white.png" alt="Logo" class="header__logo">
           </div>
          
-         <div class="text-box">
-          <h1 class="heading-primary">
-             <span class="heading-primary-main">Outdoors</span>
-             <span class="heading-primary-sub">is where life happens</span>
+         <div class="header__text-box">
+          <h1 class="heading-primary"><!--stand alone block you can use anywhere-->
+             <span class="heading-primary--main">Outdoors</span>
+             <span class="heading-primary--sub">is where life happens</span>
+             <!--block--modifiers, these are modifiers, because they create slightly different version of heading-primary-->
           </h1>
 
-          <a href="#" class="btn btn-white btn-animated">Discover our tours</a>
+          <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
          </div>
         </header>
     </body>
