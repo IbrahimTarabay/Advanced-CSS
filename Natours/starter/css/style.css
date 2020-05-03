@@ -36,30 +36,27 @@ body {
   position: relative;
   /*to make text-box and logo-box relative to header, it's a reference*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  /*need a reference*/
-  /*with absolute psoitioning, an element can be
-  placed anywhere on a page*/
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem;
-  /*width automaticaly figured out from the browser*/ }
-
-.header__text-box {
-  position: absolute;
-  /*need a reference*/
-  top: 40%;
-  left: 50%;
-  /*top and left in relation to the parent*/
-  transform: translate(-50%, -50%);
-  /*transform in relation to the element itself*/
-  /*to translate the origin point of x-y axis of the box*/
-  text-align: center;
-  /*background-color: red;*/ }
+  .header__logo-box {
+    position: absolute;
+    /*need a reference*/
+    /*with absolute psoitioning, an element can be
+    placed anywhere on a page*/
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem;
+    /*width automaticaly figured out from the browser*/ }
+  .header__text-box {
+    position: absolute;
+    /*need a reference*/
+    top: 40%;
+    left: 50%;
+    /*top and left in relation to the parent*/
+    transform: translate(-50%, -50%);
+    /*transform in relation to the element itself*/
+    /*to translate the origin point of x-y axis of the box*/
+    text-align: center;
+    /*background-color: red;*/ }
 
 .heading-primary {
   color: #fff;
@@ -67,28 +64,26 @@ body {
   backface-visibility: hidden;
   /*to fix shaky animation*/
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  /*gives line breaks before and after it*/
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-out;
-  /*start fast then slow*/
-  /*
-   animation-delay: 3s;
-   animation-iteration-count: 3;
-  */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.7rem;
-  animation: moveInRight 1.5s ease-out; }
+  .heading-primary--main {
+    display: block;
+    /*gives line breaks before and after it*/
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    /*start fast then slow*/
+    /*
+     animation-delay: 3s;
+     animation-iteration-count: 3;
+    */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.7rem;
+    animation: moveInRight 1.5s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -118,8 +113,7 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   /*to make the sytles the same even after visited*/
   text-transform: uppercase;
   text-decoration: none;
@@ -135,6 +129,11 @@ body {
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.2) scaleY(1.4);
+    /*to increase the size of element*/
+    /*we put transition in initial state btn::after not here*/
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-1px);
@@ -143,6 +142,9 @@ body {
 .btn--white {
   background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    /*background-color:red;*/
+    background-color: #fff; }
 
 .btn::after {
   content: "";
@@ -159,16 +161,6 @@ body {
   z-index: -1;
   /*defines the position of the elements if they are one on top of another*/
   transition: all .4s; }
-
-.btn--white::after {
-  /*background-color:red;*/
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.2) scaleY(1.4);
-  /*to increase the size of element*/
-  /*we put transition in initial state btn::after not here*/
-  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom .5s ease-out .4s;
