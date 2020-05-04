@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*good practice*/
+}
+
+html {
+  font-size: 62.5%;
+  /*62.5% of 16px(default browser) = 10px, we didn't write 10px to 
+  make user have choice to change font-size from setting of browser*/
+  /*we make font-size: 10px so 1 rem = 10px*/
+}
+
+body {
+  box-sizing: border-box;
+  /*Defines how the width and height of an element are calculated:
+   should they include padding and borders, or not, we inherit it
+   from *{} so we have margin:0 and padding:0*/
+}

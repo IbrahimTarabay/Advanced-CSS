@@ -1,0 +1,59 @@
+.btn {
+    &:link,
+    &:visited {/*to make the sytles the same even after visited*/
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block;/*to give some paddings or some height to element not line break*/
+      border-radius: 10rem;
+      transition: all .2s;
+      position: relative;/*reference*/
+      font-size: 1.2rem;
+    }
+  
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black,.2);
+  
+      &::after {
+        transform: scaleX(1.2) scaleY(1.4);
+        /*to increase the size of element*/
+        /*we put transition in initial state btn::after not here*/
+        opacity: 0;
+      }
+    }
+  
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+  
+    &--white {
+      background-color: $color-white;
+      color: $color-grey-dark;
+  
+      &::after {
+        /*background-color:red;*/
+        background-color: $color-white;
+      }
+    }
+  
+    &::after {
+      content: "";/*necessary to put in pesudo element*/
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      /*we make height and width 100% because pesudo element consider child of btn*/
+      border-radius: 10rem;
+      position: absolute;/*need to have reference*/
+      top: 0;
+      left: 0;
+      z-index: -1;/*defines the position of the elements if they are one on top of another*/
+      transition: all .4s;
+    }
+  
+    &--animated {
+      animation: moveInBottom .5s ease-out .4s;/*last seconds is delay*/
+      animation-fill-mode: backwards;/*be in 0% moveInBottom before it started*/
+     }  
+    }
