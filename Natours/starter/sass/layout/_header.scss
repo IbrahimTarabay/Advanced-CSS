@@ -9,7 +9,7 @@
     background-position: top;/*to fix the top view when the screen change*/
     position: relative;/*to make text-box and logo-box relative to header, it's a reference*/
   
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);/*x-y on each corner*/
   
     &__logo-box{
       position: absolute;/*need a reference*/
