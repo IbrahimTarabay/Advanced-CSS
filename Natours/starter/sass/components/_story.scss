@@ -1,0 +1,40 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, .1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  /*& > * {
+    transform: skewX(12deg);
+  } it won't work you should put it in child by child*/
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    /*circle(radius at width height) = circle(7.5rem at 7.5rem 7.5rem) this doesn't make
+    a circle we just make text wrapping like there is a circle*/
+
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    /*it's make an actual circle*/
+
+    transform: translateX(-3rem) skewX(12deg);
+    /*the best way to deal with element floating is just use a transform*/
+  }
+
+  &__img {
+    height: 100%;/*to fill all the circle shape*/
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+}
