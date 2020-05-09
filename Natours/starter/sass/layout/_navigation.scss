@@ -98,7 +98,7 @@
 
 
     //ICON
-    /*&__icon {
+    &__icon {
         position: relative;
         margin-top: 3.5rem;
 
@@ -143,5 +143,5 @@
     &__checkbox:checked + &__button &__icon::after {
         top: 0;
         transform: rotate(-135deg);
-    }*/
+    }
 }
