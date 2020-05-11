@@ -10,6 +10,11 @@
     position: relative;/*to make text-box and logo-box relative to header, it's a reference*/
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);/*x-y on each corner*/
+
+    @include respond(phone){
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);/*x-y on each corner*/
+    }
   
     &__logo-box{
       position: absolute;/*need a reference*/

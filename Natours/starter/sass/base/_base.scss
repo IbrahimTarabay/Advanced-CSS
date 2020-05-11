@@ -32,4 +32,10 @@ body {
   /*Defines how the width and height of an element are calculated:
    should they include padding and borders, or not, we inherit it
    from *{} so we have margin:0 and padding:0*/
+   padding: 3rem;
+   /*padding here not inherited all we do is padding entire body*/
+   @include respond(tab-port){
+     padding: 0;
+     /*to make rid of white padding in tab-port*/
+   }
 }
