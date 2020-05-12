@@ -290,6 +290,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
+    /*for safari*/
     backface-visibility: hidden;
     /*it basically hides the back part of element*/
     border-radius: 3px;
@@ -794,7 +796,7 @@ body {
     width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .header {
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.6), rgba(40, 180, 133, 0.6)), url(../img/hero-small.jpg);
   /*two background image and linear-gradient*/
   background-size: cover;
@@ -802,13 +804,16 @@ body {
   background-position: top;
   /*to fix the top view when the screen change*/
   position: relative;
-  /*to make text-box and logo-box relative to header, it's a reference*/
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /*x-y on each corner*/ }
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  /*to make text-box and logo-box relative to header, it's a reference*/ }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
     .header {
-      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.6), rbga(#ff7730, 0.6)), url(../img/hero.jpg); } }
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      /*x-y on each corner*/
+      height: 95vh; } }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.6), rbga(#28b485, 0.6)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
