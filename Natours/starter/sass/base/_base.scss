@@ -39,3 +39,8 @@ body {
      /*to make rid of white padding in tab-port*/
    }
 }
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}/*to make selection green when user wants to copy our text*/
